@@ -7,6 +7,15 @@
     <title>Display</title>
   </head>
   <body>
-    <h1>List of all images:-</h1>
+    <h1>Dream vehicles</h1>
+    <%for(let i of allVehicles){%>
+
+    <form action="/file/<%=i._id%>?_method=DELETE" method="post">
+      <img src="<%=i.image.url%>" alt="<%=i.name%>" />
+      <h4><%=i.name%></h4>
+      <p><%=i.description%></p>
+      <button>Delete</button>
+    </form>
+    <%}%>
   </body>
 </html>
